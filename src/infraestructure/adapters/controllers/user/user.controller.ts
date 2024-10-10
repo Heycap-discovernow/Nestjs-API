@@ -3,7 +3,7 @@ import { Get, Post, Put, Delete } from '@nestjs/common';
 import { Body, Param } from '@nestjs/common';
 import { Request, Response } from 'express';
 
-import { UserService } from 'src/users/services/user/user.service';
+import { UserService } from 'src/application/services/user/user.service';
 
 @Controller('api/v1/users')
 export class UserController {
