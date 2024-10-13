@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { MercadoPagoController } from '../adapters/controllers/MercadoPagoController';
+import { MercadoPagoController } from '../adapters/controllers/mercadopago/MercadoPagoController';
 import { MercadoPagoService } from 'src/application/services/MercadoPagoService';
 
-import { CreatePreferenceUseCaseImpl } from 'src/application/usecases/CreatePreferenceUseCaseImpl';
-import { GetPaymentDetailsUseCaseImpl } from 'src/application/usecases/GetPaymentDetailsUseCaseImpl';
-import { GetMerchantDetailsUseCaseImpl } from 'src/application/usecases/GetMerchantDetailsUseCaseImpl';
+import { CreatePreferenceUseCaseImpl } from 'src/application/usecases/mercadopago/CreatePreferenceUseCaseImpl';
+import { GetPaymentDetailsUseCaseImpl } from 'src/application/usecases/mercadopago/GetPaymentDetailsUseCaseImpl';
+import { GetMerchantDetailsUseCaseImpl } from 'src/application/usecases/mercadopago/GetMerchantDetailsUseCaseImpl';
 import { MercadoPagoRepositoryAdapter } from '../adapters/repositories/MercadoPagoRepositoryAdapter';
 
 @Module({

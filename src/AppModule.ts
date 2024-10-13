@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './infraestructure/modules/user.module';
+import { UserModule } from './infraestructure/modules/UserModule';
 import { MercadoPagoModule } from './infraestructure/modules/MercadoPagoModule';
 
 @Module({
