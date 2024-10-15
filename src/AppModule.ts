@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './infraestructure/modules/UserModule';
-import { MercadoPagoModule } from './infraestructure/modules/MercadoPagoModule';
+import { UserModule } from 'src/users/infraestructure/modules/UserModule';
+import { MercadoPagoModule } from 'src/payments/infraestructure/modules/MercadoPagoModule';
 
 @Module({
   imports: [UserModule, MercadoPagoModule],
