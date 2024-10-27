@@ -1,3 +1,3 @@
 export interface MetaVerificationCodeUseCase {
-    sendMetaVerificationCode(phone: string): Promise<string>;
+    sendMetaVerificationCode(phone: string, code: string): Promise<string>;
 }

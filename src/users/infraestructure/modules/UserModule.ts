@@ -1,24 +1,27 @@
+import { GetByIdController } from 'src/users/infraestructure/adapters/controllers/GetByIdController';
+import { CreateUserController } from 'src/users/infraestructure/adapters/controllers/CreateUserController';
+import { DeleteUserController } from 'src/users/infraestructure/adapters/controllers/DeleteUserController';
+import { LoginController } from 'src/users/infraestructure/adapters/controllers/LoginController';
+import { UpdateUserController } from 'src/users/infraestructure/adapters/controllers/UpdateUserController';
+import { UserRepositoryAdapter } from 'src/users/infraestructure/adapters/repositories/UserRepositoryAdapter';
+
+import { UserService } from 'src/users/application/services/UserService';
+import { GetUserByIdUseCaseImpl } from 'src/users/application/usecases/GetUserByIdUseCaseImpl';
+import { CreateUserUseCaseImpl } from 'src/users/application/usecases/CreateUserUseCaseImpl';
+import { UpdateUserUseCaseImpl } from 'src/users/application/usecases/UpdateUserUseCaseImpl';
+import { DeleteUserUseCaseImpl } from 'src/users/application/usecases/DeleteUserUseCaseImpl';
+import { LoginUserUseCaseImpl } from 'src/users/application/usecases/LoginUseCase';
+
+import { ContactModule } from 'src/auth/infraestructure/modules/ContactModule';
+import { TokenModule } from 'src/auth/infraestructure/modules/TokenModule';
+
 import { Module } from '@nestjs/common';
 
-import { GetByIdController } from '../adapters/controllers/GetByIdController';
-import { CreateUserController } from '../adapters/controllers/CreateUserController';
-import { DeleteUserController } from '../adapters/controllers/DeleteUserController';
-import { LoginController } from '../adapters/controllers/LoginController';
-import { UpdateUserController } from '../adapters/controllers/UpdateUserController';
-
-import { UserService } from '../../application/services/UserService';
-import { GetUserByIdUseCaseImpl } from '../../application/usecases/GetUserByIdUseCaseImpl';
-import { CreateUserUseCaseImpl } from '../../application/usecases/CreateUserUseCaseImpl';
-import { UpdateUserUseCaseImpl } from '../../application/usecases/UpdateUserUseCaseImpl';
-import { DeleteUserUseCaseImpl } from '../../application/usecases/DeleteUserUseCaseImpl';
-import { LoginUserUseCaseImpl } from '../../application/usecases/LoginUseCase';
-
-import { UserRepositoryAdapter } from '../adapters/repositories/UserRepositoryAdapter';
-
 @Module({
-    // imports: [], // Only if you want to import other modules to use their services
+    imports: [ContactModule, TokenModule], // Only if you want to import other modules to use their services
     controllers: [GetByIdController, CreateUserController, DeleteUserController, LoginController, UpdateUserController],
-    providers: [UserService,
+    providers: [
+        UserService,
         {
             provide: 'GetUserByIdUseCase',
             useClass: GetUserByIdUseCaseImpl

@@ -8,7 +8,7 @@ export class MetaVerificationCodeUseCaseImpl implements MetaVerificationCodeUseC
     constructor(
         @Inject("NotificationRepository") private readonly notificationRepository: NotificationRepository
     ){}
-    public async sendMetaVerificationCode(email: string): Promise<string> {
+    public async sendMetaVerificationCode(phone: string): Promise<string> {
         return 'Meta verification code sent successfully';
     }
 }

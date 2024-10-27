@@ -1,3 +1,4 @@
+import { PhoneVerified } from "src/users/domain/value_objects/PhoneVerified";
 export class UserResponse {
     constructor(
         public uuid:string,
@@ -6,7 +7,7 @@ export class UserResponse {
         public nickname: string,
         public email: string,
         public phone: string | null,
-        public phone_verified?: boolean | null,
+        public phone_verified?: PhoneVerified | null,
         public avatar?: string | null
     ) {}
 }

@@ -2,7 +2,7 @@
 import { UserDTO } from "src/users/domain/dtos/UserDTO";
 import { UserResponse } from "src/users/application/dtos/response/UserResponse";
 
-export class UserMapper {
+export class ToUserResponse {
     public static toUserResponse(user: UserDTO): UserResponse {
         return new UserResponse(
             user.uuid,
